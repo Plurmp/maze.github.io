@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maze project</title>
+    <style>
+        body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        table td {
+            border: 1px #000 solid;
+        }
+        table {
+            width: 100%;
+            height: 100%;
+            border-spacing: 0;
+        }
+        #maze-container {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+    <script src="maze.js"></script>
+</head>
+<body>
+    <div id="generation-info">
+        <label for="width-box">Maze Dimensions:</label>
+        <input type="text" placeholder="width" id="width-box"> x <input type="text" placeholder="height" id="height-box">
+        <input type="button" value="Generate Maze" id="generate-maze" onclick="generateMaze()">
+    </div>
+    <div id="maze-container" style="line-height: 15px"></div>
+    <input type="button" value="Solve Maze" id="solve-maze" onclick="solveMaze()" hidden>
+    <p id="maze-solution" hidden>placeholder</p>
+</body>
+</html>
