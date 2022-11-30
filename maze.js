@@ -128,6 +128,10 @@ const search = () => { // depth-first search
 	}
 }
 
+const colorPath = (cell) => {
+	document.getElementById("cell-" + cell).style.backgroundColor = "#222";
+}
+
 const solveMaze = () => {
 	document.getElementById("solve-maze").hidden = true;
 
@@ -136,7 +140,7 @@ const solveMaze = () => {
 
 	let path = "";
 	for (let i = 0; i < finishedPath.length; i++) {
-		document.getElementById("cell-" + finishedPath[i]).style.backgroundColor = "#000";
+		setTimeout(colorPath(finishedPath[i]), 100);
 		if (finishedPath[i + 1] === finishedPath[i] - width) {
 			path += "N";
 		}
